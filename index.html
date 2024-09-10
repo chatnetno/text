@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrering og meldinger</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #container {
+            width: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h2>Opprett konto eller logg inn</h2>
+    
+    <div id="login-container">
+        <input type="email" id="email" placeholder="Skriv inn e-post" required>
+        <input type="password" id="password" placeholder="Skriv inn passord" required>
+        <button id="login-button">Logg inn</button>
+        <div id="error-message"></div>
+        <p>Har du ikke en konto? <a href="#" id="register-link">Registrer deg her</a></p>
+    </div>
+
+    <div id="register-container" style="display:none;">
+        <input type="email" id="reg-email" placeholder="Skriv inn e-post" required>
+        <input type="password" id="reg-password" placeholder="Skriv inn passord" required>
+        <input type="text" id="username" placeholder="Velg brukernavn" required>
+        <button id="register-button">Registrer deg</button>
+        <div id="error-message-reg"></div>
+        <p>Har du allerede en konto? <a href="#" id="login-link">Logg inn her</a></p>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
